@@ -1,0 +1,150 @@
+:root {
+  --link-color: #fff;
+  --link-hover-color: #ddd;
+  --header-background-color: #000;
+  --header-text-color: #fff;
+  --menu-button-color: #fff;
+  --dark-color: #fff;
+  --light-color: #000;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 80px;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--header-background-color);
+  color: var(--header-text-color);
+  padding: 10px;
+}
+
+.logo {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  margin-right: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-size: 22px;
+}
+
+.nav-links a:hover {
+  color: var(--link-hover-color);
+}
+
+.menu-button {
+  display: none;
+}
+
+@media only screen and (max-width: 511px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-close {
+    transform: translateX(-100%);
+  }
+
+  .nav-open {
+    transform: translateX(0);
+  }
+
+  .menu-button {
+    display: block;
+    z-index: 1000;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    left: 80%;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 24px;
+    position: relative;
+  }
+
+  .menu-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--menu-button-color);
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  .menu-icon span:nth-child(1) {
+    top: 0px;
+  }
+
+  .menu-icon span:nth-child(2),
+  .menu-icon span:nth-child(3) {
+    top: 10px;
+  }
+
+  .menu-icon span:nth-child(4) {
+    top: 20px;
+  }
+
+  .menu-icon.open span:nth-child(1) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .menu-icon.open span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .menu-icon.open span:nth-child(4) {
+    top: 10px;
+    width: 0%;
+    left: 50%;
+  }
+}
+
