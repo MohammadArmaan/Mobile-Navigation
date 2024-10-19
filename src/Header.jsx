@@ -18,11 +18,10 @@ export default function Header() {
       </div>
       <nav
         className={`nav-links ${isOpen ? "nav-open" : "nav-close"}`}
-        onClick={onClose}
       >
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="#" onClick={onClose}>Link 1</a>
+        <a href="#" onClick={onClose}>Link 2</a>
+        <a href="#" onClick={onClose}>Link 3</a>
       </nav>
       <div className="menu-button" onClick={onOpen}>
         <div className={`menu-icon ${isOpen ? "open" : ""}`}>
