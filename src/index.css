@@ -30,6 +30,7 @@
 }
 
 .logo {
+  margin-left: 3rem;
   font-size: 32px;
   display: flex;
   align-items: center;
